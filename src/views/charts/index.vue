@@ -1,20 +1,20 @@
-<template>
+ <template>
   <div class="dashboard-editor-container">
 
-    <!-- <github-corner style="position: absolute; top: 0px; border: 0; right: 0;"/> -->
-<!-- panel group没有显示 -->
-    <panel-group @handleSetLineChartData="handleSetLineChartData"/>
+    <github-corner style="position: absolute; top: 0px; border: 0; right: 0;"/>
+
+    <!-- <panel-group @handleSetLineChartData="handleSetLineChartData"/> -->
 
     <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
       <line-chart :chart-data="lineChartData"/>
     </el-row>
 
     <el-row :gutter="32">
-    <!--   <el-col :xs="24" :sm="24" :lg="8">
+      <el-col :xs="24" :sm="24" :lg="8">
         <div class="chart-wrapper">
-          <raddar-chart/>
+          <line-chart :chart-data="lineChartData"/>
         </div>
-      </el-col> -->
+      </el-col>
       <el-col :xs="24" :sm="24" :lg="8">
         <div class="chart-wrapper">
           <pie-chart/>
@@ -31,9 +31,10 @@
     <!--   <el-col :xs="{span: 24}" :sm="{span: 24}" :md="{span: 24}" :lg="{span: 12}" :xl="{span: 12}" style="padding-right:8px;margin-bottom:30px;">
         <transaction-table/>
       </el-col> -->
-      <el-col :xs="{span: 24}" :sm="{span: 12}" :md="{span: 12}" :lg="{span: 6}" :xl="{span: 6}" style="margin-bottom:30px;">
+      <!-- to do list 现在没有显示在charts上面 -->
+      <!-- <el-col :xs="{span: 24}" :sm="{span: 12}" :md="{span: 12}" :lg="{span: 6}" :xl="{span: 6}" style="margin-bottom:30px;">
         <todo-list/>
-      </el-col>
+      </el-col> -->
      <!--  <el-col :xs="{span: 24}" :sm="{span: 12}" :md="{span: 12}" :lg="{span: 6}" :xl="{span: 6}" style="margin-bottom:30px;">
         <box-card/>
       </el-col> -->
@@ -43,10 +44,10 @@
 </template>
 
 <script>
-import LineChart from './components/LineChart'
-import PieChart from './components/PieChart'
-import BarChart from './components/BarChart'
-import TodoList from './components/TodoList'
+import LineChart from '@/views/charts/components/LineChart'
+import PieChart from '@/views/charts/components/PieChart'
+import BarChart from '@/views/charts/components/BarChart'
+// import TodoList from './components/TodoList'
 
 const lineChartData = {
   newVisitis: {
@@ -73,7 +74,7 @@ export default {
     LineChart,
     PieChart,
     BarChart,
-    TodoList,
+    // TodoList,
   },
   data() {
     return {
